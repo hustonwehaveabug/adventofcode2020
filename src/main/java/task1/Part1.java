@@ -5,7 +5,7 @@ import utils.FileReader;
 import java.util.HashSet;
 import java.util.List;
 
-public class Main {
+public class Part1 {
 
     public static void main(String[] args) {
         int sum = 2020;
@@ -20,6 +20,7 @@ public class Main {
                 System.out.println(firstNumber + " + " + secondNumber + " = " + sum);
                 int multiply = firstNumber * secondNumber;
                 System.out.println(firstNumber + " * " + secondNumber + " = " + multiply);
+                return;
             }
             hashSet.add(input.get(i));
         }
