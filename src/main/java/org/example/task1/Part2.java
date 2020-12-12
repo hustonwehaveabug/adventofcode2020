@@ -1,6 +1,6 @@
-package task1;
+package org.example.task1;
 
-import utils.FileReader;
+import org.example.utils.FileReader;
 
 import java.util.HashSet;
 import java.util.List;
@@ -11,7 +11,7 @@ public class Part2 {
     public static void main(String[] args) {
         int sum = 2020;
 
-        List<Integer> input = FileReader.readFile("task1-input.txt");
+        List<Integer> input = FileReader.readFileAsIntegers("task1-input.txt");
 
         for (int i = 0; i < input.size() - 2; i++)
         {

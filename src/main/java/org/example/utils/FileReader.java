@@ -1,4 +1,4 @@
-package utils;
+package org.example.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,15 +8,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class FileReader {
 
-    public static List<Integer> readFile(String path) {
-        List<Integer> result = new ArrayList<>();
+    private FileReader() {
+        throw new IllegalStateException("Util class");
+    }
+
+    public static List<Integer> readFileAsIntegers(String path) {
+        List<String> strings = readFileAsStrings(path);
+        return strings.stream()
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+    }
+
+    public static List<String> readFileAsStrings(String path) {
+        List<String> result = new ArrayList<>();
 
         try (Scanner scanner = new Scanner(getFileFromResource(path))) {
             while (scanner.hasNextLine()) {
-                result.add(Integer.parseInt(scanner.nextLine()));
+                result.add(scanner.nextLine());
             }
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
