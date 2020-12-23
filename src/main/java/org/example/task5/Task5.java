@@ -3,8 +3,6 @@ package org.example.task5;
 import org.example.Validator;
 import org.example.utils.FileReader;
 
-import java.util.List;
-
 public class Task5 {
 
     public static void main(String[] args) {
